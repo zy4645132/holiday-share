@@ -1,94 +1,79 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>一键发推活动</title>
-
-  <!-- Twitter Card 设置 -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="节日发推活动">
-  <meta name="twitter:description" content="选择一个节日话题，一键发推！">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
-
+  <title>节日发帖小工具</title>
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 30px;
-      background: #f5f5f5;
+      background: url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover; /* 背景图铺满 */
+      color: #fff;
     }
-    h1 {
-      margin-bottom: 30px;
-    }
-    /* 容器：横向排列 */
-    .options {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
+    .container {
+      background: rgba(0,0,0,0.6); /* 半透明背景，保证文字清晰 */
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 50px;
     }
     .option {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 220px;
+      margin: 20px 0;
     }
     .option img {
-      width: 100%;
+      width: 300px;
       border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .btn {
       display: block;
-      padding: 12px;
-      background: #1DA1F2;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-size: 16px;
-      font-weight: bold;
-      transition: background 0.2s;
+      margin: 10px auto;
     }
-    .btn:hover {
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: #1da1f2;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
       background: #0d8ddb;
     }
   </style>
 </head>
 <body>
-  <h1>选择节日，发推参与活动 🎉</h1>
+  <div class="container">
+    <h1>选择你最喜欢的！</h1>
 
-  <div class="options">
-    <!-- 中秋节 -->
+    <!-- 选项1 -->
     <div class="option">
-      <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="中秋节月亮">
-      <a class="btn" 
-         href="https://twitter.com/intent/tweet?text=%E6%88%91%E6%AD%A3%E5%9C%A8%E5%BA%86%E7%A5%9D%20%23%E4%B8%AD%E7%A7%8B%E8%8A%82%20%F0%9F%8E%91&hashtags=%E8%8A%82%E6%97%A5%E6%B4%BB%E5%8A%A8&url=https://zy4645132.github.io/holiday-share/" 
-         target="_blank">
-        发帖 #中秋节
-      </a>
+      <h2>#我最喜欢原神-空月之歌</h2>
+      <img src="images/genshin.jpg" alt="原神 空月之歌">
+      <button onclick="postToTwitter('#我最喜欢原神-空月之歌')">发帖</button>
     </div>
 
-    <!-- 国庆节 -->
+    <!-- 选项2 -->
     <div class="option">
-      <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="国庆节烟花">
-      <a class="btn" 
-         href="https://twitter.com/intent/tweet?text=%E6%88%91%E6%AD%A3%E5%9C%A8%E5%BA%86%E7%A5%9D%20%23%E5%9B%BD%E5%BA%86%E8%8A%82%20%F0%9F%8E%86&hashtags=%E8%8A%82%E6%97%A5%E6%B4%BB%E5%8A%A8&url=https://zy4645132.github.io/holiday-share/" 
-         target="_blank">
-        发帖 #国庆节
-      </a>
+      <h2>#我最喜欢鸣潮-克拉拉</h2>
+      <img src="images/wuthering.jpg" alt="鸣潮 克拉拉">
+      <button onclick="postToTwitter('#我最喜欢鸣潮-克拉拉')">发帖</button>
     </div>
 
-    <!-- 愚人节 -->
+    <!-- 选项3 -->
     <div class="option">
-      <img src="https://images.unsplash.com/photo-1588776814546-ec2b4f3f2f8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="愚人节搞笑气球">
-      <a class="btn" 
-         href="https://twitter.com/intent/tweet?text=%E5%93%88%E5%93%88%E5%93%88%E4%BB%8A%E5%A4%A9%E6%98%AF%20%23%E6%84%9A%E4%BA%BA%E8%8A%82%20%F0%9F%98%82&hashtags=%E8%8A%82%E6%97%A5%E6%B4%BB%E5%8A%A8&url=https://zy4645132.github.io/holiday-share/" 
-         target="_blank">
-        发帖 #愚人节
-      </a>
+      <h2>#我最喜欢艾尔登法环-女武神</h2>
+      <img src="images/eldenring.jpg" alt="艾尔登法环 女武神">
+      <button onclick="postToTwitter('#我最喜欢艾尔登法环-女武神')">发帖</button>
     </div>
   </div>
+
+  <script>
+    function postToTwitter(message) {
+      const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+    }
+  </script>
 </body>
 </html>
