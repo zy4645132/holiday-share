@@ -9,29 +9,47 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="节日发推活动">
   <meta name="twitter:description" content="选择一个节日话题，一键发推！">
-  <meta name="twitter:image" content="https://via.placeholder.com/600x300.png?text=Holiday+Share">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
 
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 30px;
       background: #f5f5f5;
     }
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    /* 容器：横向排列 */
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .option {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 220px;
+    }
+    .option img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
     .btn {
       display: block;
-      margin: 15px auto;
-      padding: 15px 20px;
-      width: 250px;
+      padding: 12px;
       background: #1DA1F2;
       color: white;
       text-decoration: none;
       border-radius: 25px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
+      transition: background 0.2s;
     }
     .btn:hover {
       background: #0d8ddb;
@@ -41,19 +59,36 @@
 <body>
   <h1>选择节日，发推参与活动 🎉</h1>
 
-  <!-- 中秋节 -->
-  <a class="btn" href="https://twitter.com/intent/tweet?text=我正在庆祝%20%23中秋节%20🎑&hashtags=节日活动" target="_blank">
-    发帖 #中秋节
-  </a>
+  <div class="options">
+    <!-- 中秋节 -->
+    <div class="option">
+      <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="中秋节月亮">
+      <a class="btn" 
+         href="https://twitter.com/intent/tweet?text=%E6%88%91%E6%AD%A3%E5%9C%A8%E5%BA%86%E7%A5%9D%20%23%E4%B8%AD%E7%A7%8B%E8%8A%82%20%F0%9F%8E%91&hashtags=%E8%8A%82%E6%97%A5%E6%B4%BB%E5%8A%A8&url=https://zy4645132.github.io/holiday-share/" 
+         target="_blank">
+        发帖 #中秋节
+      </a>
+    </div>
 
-  <!-- 国庆节 -->
-  <a class="btn" href="https://twitter.com/intent/tweet?text=我正在庆祝%20%23国庆节%20🎆&hashtags=节日活动" target="_blank">
-    发帖 #国庆节
-  </a>
+    <!-- 国庆节 -->
+    <div class="option">
+      <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="国庆节烟花">
+      <a class="btn" 
+         href="https://twitter.com/intent/tweet?text=%E6%88%91%E6%AD%A3%E5%9C%A8%E5%BA%86%E7%A5%9D%20%23%E5%9B%BD%E5%BA%86%E8%8A%82%20%F0%9F%8E%86&hashtags=%E8%8A%82%E6%97%A5%E6%B4%BB%E5%8A%A8&url=https://zy4645132.github.io/holiday-share/" 
+         target="_blank">
+        发帖 #国庆节
+      </a>
+    </div>
 
-  <!-- 愚人节 -->
-  <a class="btn" href="https://twitter.com/intent/tweet?text=哈哈哈今天是%20%23愚人节%20😂&hashtags=节日活动" target="_blank">
-    发帖 #愚人节
-  </a>
+    <!-- 愚人节 -->
+    <div class="option">
+      <img src="https://images.unsplash.com/photo-1588776814546-ec2b4f3f2f8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="愚人节搞笑气球">
+      <a class="btn" 
+         href="https://twitter.com/intent/tweet?text=%E5%93%88%E5%93%88%E5%93%88%E4%BB%8A%E5%A4%A9%E6%98%AF%20%23%E6%84%9A%E4%BA%BA%E8%8A%82%20%F0%9F%98%82&hashtags=%E8%8A%82%E6%97%A5%E6%B4%BB%E5%8A%A8&url=https://zy4645132.github.io/holiday-share/" 
+         target="_blank">
+        发帖 #愚人节
+      </a>
+    </div>
+  </div>
 </body>
 </html>
